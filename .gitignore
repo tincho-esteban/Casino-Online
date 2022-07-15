@@ -1,6 +1,9 @@
 #google drive
 desktop.ini
 
+#extenciones
+.vscode/
+
 # Logs
 logs
 *.log
