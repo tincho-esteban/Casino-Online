@@ -144,3 +144,32 @@ function inicioSesion() {
     return(false)
 }
 
+function usuarios(){
+    fetch ('js/usuarios.json')
+        .then(res => res.json())
+        .then(datos => {
+            tabla(datos)
+        })
+}
+
+function tabla(datos) {
+    console.log(datos)
+    contenido.innerHTML = `
+    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+    `
+    for(let valor of datos){
+        contenido.innerHTML += `
+        <tr>
+            <th scope="row">${ valor.id }</th>
+            <td>${ valor.usuario }</td>
+            <td>${ valor.email }</td>
+        </tr>
+        `
+    }
+}

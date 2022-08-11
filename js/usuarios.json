@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "usuario": "tincho",
+        "email":"tinchoesteban2004@gmail.com",
+        "contrasena":"Asdf1234",
+        "mayorDeEdad":true
+    },
+    {
+        "id": 2,
+        "usuario": "juan",
+        "email":"juanGarcia@gmail.com",
+        "contrasena":"Zxc12345",
+        "mayorDeEdad":true
+    },
+    {
+        "id": 3,
+        "usuario": "MariaF",
+        "email":"mariafernanda05@gmail.com",
+        "contrasena":"Sdf45678",
+        "mayorDeEdad":true
+    },
+    {
+        "id": 4,
+        "usuario": "nanoF",
+        "email":"marianofernandez@gmail.com",
+        "contrasena":"Qwerty12",
+        "mayorDeEdad":true
+    }
+]
