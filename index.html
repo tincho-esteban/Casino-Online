@@ -20,8 +20,8 @@
 
 <body class="bg-dark">
     <nav class="navbar navbar-dark bg-dark fixed-top d-flex justify-content-center shadow z-index-1">
-        <button class="btn btn-outline-primary position-absolute start-0 boton-nav" type="button">
-            <span class="inicio-sesion" onclick="btnIniciarSesion()"> Iniciar Sesión</span>
+        <button class="btn btn-outline-primary position-absolute start-0 boton-nav" type="button" id="botonIni">
+            <span id="spanInicioSesion" class="inicio-sesion" onclick="btnIniciarSesion()">Iniciar Sesion</span>
         </button>
         <a class="navbar-brand abs-center" href="index.html"><img src="media/img/logo.png" alt="logo"></a>
         <button class="navbar-toggler position-absolute end-0 boton-nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -41,14 +41,11 @@
                             Juegos
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Blackjack</a></li>
+                            <li><a class="dropdown-item" href="#">Ruleta</a></li>
+                            <li><a class="dropdown-item" href="#">Tragamonedas</a></li>
+                            <li><a class="dropdown-item" href="#">Poker</a></li>
+                            <li><a class="dropdown-item" href="#">Raspa y gana</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -56,7 +53,7 @@
         </div>
     </nav>
 
-    <div class="invisible" id="fondo">
+    <div class="invisible" id="fondo-registro">
         <button class="btn-close-white position-absolute top-0 start-0" onclick="ocultar()">X</button>
         <div class="contenedor">
             <button class="boton" onclick="mostrarInicioSesion()">iniciar sesión</button>
@@ -75,15 +72,13 @@
                         <li>Debe contener mínimo una mayúscula</li>
                         <li>Debe contener mínimo un numero</li>
                     </ul>
-                    <input type="checkbox" id="edad" required>
-                    <label for="edad">Soy mayor de 18 Años</label>
                     <input id="Registrarme" type="submit" value="Registrarse" onclick="return registro()">
                 </form>
-            <form id="sesion">
+            <form id="sesion" name="iniSesion">
                 <label for="nombreUsuario">Nombre de usuario</label>
                 <input type="text" id="nombreUsuario" required>
                 <label for="contraseñaUsuario">Contraseña</label>
-                <input type="password" id="contraseñaUsuario" required>
+                <input type="password" id="contraseñaUsuario" required><br>
                 <input id="iniciarSesion" type="submit" value="Iniciar sesión" onclick="return inicioSesion()">
             </form>
             <button class="usuarios" onclick="return usuarios()">Ver usuarios registrados</button>
@@ -95,13 +90,20 @@
         </div>
     </div>
 
-    
-    <div class="position-absolute top-50 start-50">
-        
+    <div class="mesa">
+        <div id="titulo">Blackjack</div>
+        <div id="canvasDiv"><canvas id="canvas"></canvas></div>
+        <div id="botones">
+            <input type="button" value="Pedir Carta" onclick="pedirCarta()" id="pedir" class="button" >
+            <input type="button" value="Jugar otra vez!" id="reset" onclick="playagain()" >
+            <input type="button" value="Plantarme" onclick="plantarme()" id="plantar" class="button" >
+        </div>
+        <div id="info"></div>
     </div>
 
-    <!-- link a js -->
+    <!-- links a js -->
     <script src="js/main.js"></script>
+    <script src="js/blackjack.js"></script>
 </body>
 
 </html>
